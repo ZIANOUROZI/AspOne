@@ -1,0 +1,14 @@
+﻿@model Leave
+
+<form asp-controller="Leaves" asp-action="EditStatus" method="post">
+    <input type="hidden" asp-for="LeaveId" />
+    <label asp-for="Status">Status</label>
+    <div class="form-group">
+        <select asp-for="Status" class="form-control">
+            <option value="Waiting">Waiting</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success">Uppdatera status</button>
+</form>

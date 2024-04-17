@@ -1,0 +1,44 @@
+﻿@model List<Leave>
+<h1>Registerad Leaves</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Employee</th>
+			<th>StartDate</th>
+			<th>EndDate</th>
+			<th>Type of leaves</th>
+			<th>Status</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var leave in Model)
+		{
+			<tr>
+				<td>@leave.Employee.EmployeeName</td>
+				<td>@leave.StartDate.ToShortDateString()</td>
+				<td>@leave.EndDate.ToShortDateString()</td>
+				<td>@leave.Type</td>
+				<td>@leave.Status.ToString()</td>
+				<td>
+					<a asp-action="EditStatus" asp-route-id="@leave.LeaveId" class="btn btn-success">change status </a>
+				</td>
+			</tr>
+		}
+	</tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
